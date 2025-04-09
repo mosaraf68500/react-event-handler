@@ -2,6 +2,7 @@ import React from 'react';
 
 import './App.css'
 import Counter from './Counter';
+import Batsman from './Batsman';
 
 function App() {
 
@@ -22,6 +23,8 @@ function App() {
     <>
       
       <h1>react event haldler</h1>
+
+      <Batsman></Batsman>
 
       <Counter></Counter>
       <button onClick={handleEvent}>click me</button>
