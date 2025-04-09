@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { use } from 'react';
 
-const Users = () => {
+const Users = ({fetchUser}) => {
+    const users=use(fetchUser);
+    console.log(users)
     return (
         
     <div className='card'>
-    <h1>Users: </h1>
+    <h1>Users:{users.length} </h1>
 
 
     </div>

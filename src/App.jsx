@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 
 import './App.css'
 import Counter from './Counter';
 import Batsman from './Batsman';
 import Ball from './Ball';
 import Users from './Users';
+
+
+const fetchUser=fetch('https://jsonplaceholder.typicode.com/users')
+.then(res =>res.json());
 
 function App() {
 
@@ -25,8 +29,12 @@ function App() {
     <>
       
       <h1>react event haldler</h1>
+    
+      <Suspense fallback={<p>Loading...</p>}>
+        <Users fetchUser={fetchUser}></Users>
+      </Suspense>
 
-      <Users></Users>
+
 
       <Ball></Ball>
 
