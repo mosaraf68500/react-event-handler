@@ -4,6 +4,7 @@ import './App.css'
 import Counter from './Counter';
 import Batsman from './Batsman';
 import Ball from './Ball';
+import Users from './Users';
 
 function App() {
 
@@ -24,6 +25,8 @@ function App() {
     <>
       
       <h1>react event haldler</h1>
+
+      <Users></Users>
 
       <Ball></Ball>
 
