@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css'
 import Counter from './Counter';
 import Batsman from './Batsman';
+import Ball from './Ball';
 
 function App() {
 
@@ -23,6 +24,8 @@ function App() {
     <>
       
       <h1>react event haldler</h1>
+
+      <Ball></Ball>
 
       <Batsman></Batsman>
 
