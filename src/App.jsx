@@ -3,13 +3,27 @@ import './App.css'
 
 function App() {
 
+  function handleEvent(){
+    alert('click me');
+  }
+
+  const handler2=()=>{
+    alert('click me 3')
+  }
+
+  const handler3=(num)=>{
+  const newNumber=num+5;
+  alert(newNumber);
+  }
+
   return (
     <>
       
-      <h1>react core concept part-1</h1>
-      <Friends  name='mosaraf'></Friends> 
-      <Friends  name='rony'></Friends> 
-      <Friends  name='imran'></Friends> 
+      <h1>react event haldler</h1>
+      <button onClick={handleEvent}>click me</button>
+      <button onClick={function handler(){alert('click me 2')}}>click me2</button>
+      <button onClick={handler2}>click me 3</button>
+      <button onClick={()=>handler3(10)}>add number at 5</button>
       
     </>
   )
