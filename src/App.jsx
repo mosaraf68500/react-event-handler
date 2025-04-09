@@ -1,5 +1,7 @@
 import React from 'react';
+
 import './App.css'
+import Counter from './Counter';
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
     <>
       
       <h1>react event haldler</h1>
+
+      <Counter></Counter>
       <button onClick={handleEvent}>click me</button>
       <button onClick={function handler(){alert('click me 2')}}>click me2</button>
       <button onClick={handler2}>click me 3</button>
