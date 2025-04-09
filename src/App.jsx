@@ -5,12 +5,21 @@ import Counter from './Counter';
 import Batsman from './Batsman';
 import Ball from './Ball';
 import Users from './Users';
+import Friends from './Friends';
 
 
 const fetchUser=fetch('https://jsonplaceholder.typicode.com/users')
 .then(res =>res.json());
 
+const friendsFetch=async()=>{
+  const res=await fetch('https://jsonplaceholder.typicode.com/posts');
+  return res.json();
+
+}
+
 function App() {
+  const friendsPromise=friendsFetch();
+
 
   function handleEvent(){
     alert('click me');
@@ -25,10 +34,15 @@ function App() {
   alert(newNumber);
   }
 
+
   return (
     <>
       
       <h1>react event haldler</h1>
+
+      <Suspense fallback={<h2>my friends are comming soon...</h2>}>
+       <Friends friendsFetch={friendsPromise}></Friends>
+      </Suspense>
     
       <Suspense fallback={<p>Loading...</p>}>
         <Users fetchUser={fetchUser}></Users>
@@ -51,13 +65,6 @@ function App() {
 }
 
 
-function Friends(props){
-  console.log(props)
-  return(
-    <div>
-      <h1>name:{props.name}</h1>
-    </div>
-  )
-}
+
 
 export default App
