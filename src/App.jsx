@@ -6,19 +6,19 @@ import Batsman from './Batsman';
 import Ball from './Ball';
 import Users from './Users';
 import Friends from './Friends';
+import Posts from './Posts';
 
 
 const fetchUser=fetch('https://jsonplaceholder.typicode.com/users')
 .then(res =>res.json());
 
-const friendsFetch=async()=>{
+const fetchPosts=async()=>{
   const res=await fetch('https://jsonplaceholder.typicode.com/posts');
   return res.json();
-
 }
 
 function App() {
-  const friendsPromise=friendsFetch();
+  const PostPromise=fetchPosts()
 
 
   function handleEvent(){
@@ -40,8 +40,8 @@ function App() {
       
       <h1>react event haldler</h1>
 
-      <Suspense fallback={<h2>my friends are comming soon...</h2>}>
-       <Friends friendsFetch={friendsPromise}></Friends>
+      <Suspense fallback={<h2>all posts loading hare....</h2>}>
+        <Posts PostPromise ={PostPromise}></Posts>
       </Suspense>
     
       <Suspense fallback={<p>Loading...</p>}>
